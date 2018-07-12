@@ -50,10 +50,11 @@
         };
         
         NSOpenGLPixelFormat *pixelFormat = [[[NSOpenGLPixelFormat alloc] initWithAttributes:attributes] autorelease];
-		
+        
 		// allocate our GL view
 		// (isn't there already a shared EAGLView?)
 		glView = [[EAGLView alloc] initWithFrame:rect pixelFormat:pixelFormat];
+        [glView prepareOpenGL];
 
 		// set window parameters
 		[window becomeFirstResponder];
